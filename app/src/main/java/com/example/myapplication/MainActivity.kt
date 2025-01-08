@@ -7,6 +7,24 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
+    private val diseaseSymptomsMap: Map<String, List<String>> = mapOf(
+        "COVID-19" to listOf("Febre", "Tosse seca", "Fadiga", "Perda do olfato ou paladar", "Dificuldade para respirar"),
+        "Gripe" to listOf("Febre", "Tosse Seca", "Dores Musculares", "Fadiga", "Congestão Nasal"),
+        "Diabetes Tipo 2" to listOf("Sede Excessiva", "Fadiga", "Visão Turva", "Perda de Peso", "Urinação Frequente"),
+        "Asma" to listOf("Falta de ar", "Aperto no peito", "Tosse Persistente", "Chiado no peito"),
+        "Bronquite" to listOf("Fadiga", "Falta de ar", "Tosse com expectoração", "Desconforto no peito"),
+        "Pneumonia" to listOf("Falta de ar", "Tosse com expectoração", "Febre", "Dor no peito"),
+        "Amigdalite" to listOf("Dor de garganta", "Febre", "Amígdalas Inchadas"),
+        "Apendicite" to listOf("Febre", "Vómitos", "Náuseas", "Perda de apetite", "Dor abdominal no lado inferior direito"),
+        "Anemia" to listOf("Fadiga", "Palidez", "Tonturas", "Falta de ar"),
+        "Depressão" to listOf("Tristeza Persistente", "Perda de apetite", "Dificuldade para dormir ou dormir demais", "Perda de interesse em atividades"),
+        "Ansiedade" to listOf("Preocupação Excessiva", "Insónias", "Irritabilidade", "Tensão Muscular"),
+        "Doença de Alzheimer" to listOf("Perda de memória", "Dificuldade para realizar tarefas familiares", "Confusão com tempos ou lugares"),
+        "Resfriado Comum" to listOf("Tosse"),
+        "Enxaqueca" to listOf("Dor de Cabeça")
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -52,7 +70,11 @@ class MainActivity : AppCompatActivity() {
         val checkBoxExcessiveWorry = findViewById<CheckBox>(R.id.checkboxExcessiveWorry)
         val checkBoxMuscleTension = findViewById<CheckBox>(R.id.checkboxMuscleTension)
         val checkBoxDifficultyPerformingFamilyTasks = findViewById<CheckBox>(R.id.checkboxDifficultyPerformingFamilyTasks)
-
+        val checkBoxConfusionWithTimeAndPlaces = findViewById<CheckBox>(R.id.checkboxConfusionWithTimeAndPlaces)
+        val checkBoxPersistentCough = findViewById<CheckBox>(R.id.checkboxPersistentCough)
+        val checkBoxWheezingInTheChest = findViewById<CheckBox>(R.id.checkboxWheezingInTheChest)
+        val checkBoxChestDiscomfort = findViewById<CheckBox>(R.id.checkboxChestDiscomfort)
+        val checkBoxDifficultyBreathing = findViewById<CheckBox>(R.id.checkboxDifficultyBreathing)
 
         buttonDiagnose.setOnClickListener {
             val symptoms = mutableListOf<String>()
@@ -95,21 +117,32 @@ class MainActivity : AppCompatActivity() {
             if (checkBoxExcessiveWorry.isChecked) symptoms.add("Preocupação Excessiva")
             if (checkBoxMuscleTension.isChecked) symptoms.add("Tensão Muscular")
             if (checkBoxDifficultyPerformingFamilyTasks.isChecked) symptoms.add("Dificuldade para realizar tarefas familiares")
-
-
+            if (checkBoxConfusionWithTimeAndPlaces.isChecked) symptoms.add("Confusão com tempos ou lugares")
+            if (checkBoxPersistentCough.isChecked) symptoms.add("Tosse Persistente")
+            if (checkBoxWheezingInTheChest.isChecked) symptoms.add("Chiado no peito")
+            if (checkBoxChestDiscomfort.isChecked) symptoms.add("Desconforto no peito")
+            if (checkBoxDifficultyBreathing.isChecked) symptoms.add("Dificuldade para respirar")
 
             val diagnosis = getDiagnosis(symptoms)
-            textViewDiagnosis.text = "Baseado nos sintomas selecionados, você pode ter: $diagnosis"
+            textViewDiagnosis.text = diagnosis
         }
     }
 
     private fun getDiagnosis(symptoms: List<String>): String {
-        return when {
-            symptoms.containsAll(listOf("Febre", "Fraqueza", "Tosse")) -> "COVID-19"
-            symptoms.contains("Febre") && symptoms.contains("Fraqueza") -> "Gripe"
-            symptoms.contains("Tosse") -> "Resfriado Comum"
-            symptoms.contains("Dor de Cabeça") -> "Enxaqueca"
-            else -> "Sintomas não suficientes para um pré-diagnóstico"
+
+        if (symptoms.size < 3) {
+            return "Sintomas insuficientes para um diagnóstico"
         }
+
+
+        for ((disease, requiredSymptoms) in diseaseSymptomsMap) {
+
+            val matchingSymptomsCount = requiredSymptoms.count { it in symptoms }
+            if (matchingSymptomsCount >= 3) {
+                return disease
+            }
+        }
+
+        return "Sintomas não suficientes para um pré-diagnóstico"
     }
 }

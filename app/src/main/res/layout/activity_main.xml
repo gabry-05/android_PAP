@@ -193,6 +193,18 @@
         android:text="Dor de garganta" />
 
     <CheckBox
+        android:id="@+id/checkboxDifficultyBreathing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dificuldade para respirar" />
+
+    <CheckBox
+        android:id ="@+id/checkboxChestDiscomfort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desconforto no peito" />
+
+    <CheckBox
         android:id="@+id/checkboxSwollenTonsils"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -247,10 +259,28 @@
         android:text="Tensão Muscular" />
 
     <CheckBox
+        android:id ="@+id/checkboxPersistentCough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tosse Persistente" />
+
+    <CheckBox
+        android:id ="@+id/checkboxWheezingInTheChest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chiado no peito" />
+
+    <CheckBox
         android:id ="@+id/checkboxDifficultyPerformingFamilyTasks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dificuldade para realizar tarefas familiares" />
+
+    <CheckBox
+        android:id ="@+id/checkboxConfusionWithTimeAndPlaces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confusão com tempos e lugares" />
 
     <Button
         android:id="@+id/buttonDiagnose"
