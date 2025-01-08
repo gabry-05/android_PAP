@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecione seus sintomas:"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"/>
+
+    <CheckBox
+        android:id="@+id/checkBoxFever"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Febre" />
+
+    <CheckBox
+        android:id="@+id/checkBoxWeakness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fraqueza" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tosse" />
+
+    <CheckBox
+        android:id="@+id/checkBoxHeadache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dor de Cabeça" />
+
+    <CheckBox
+        android:id="@+id/checkBoxNauseas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Náuseas" />
+
+    <CheckBox
+        android:id="@+id/checkBoxVomiting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vómitos" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFatigue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fadiga" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMusclePain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dores Musculares" />
+
+    <CheckBox
+        android:id="@+id/checkBoxBluerredVision"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visão Turva" />
+
+    <CheckBox
+        android:id="@+id/checkBoxDryCough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tosse Seca" />
+
+    <CheckBox
+        android:id="@+id/checkBoxChestPain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dor no peito" />
+
+    <CheckBox
+        android:id="@+id/checkboxExcessiveThirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sede Excessiva" />
+
+    <CheckBox
+        android:id="@+id/checkboxInsomnia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insónias" />
+
+    <CheckBox
+        android:id="@+id/checkboxShortnessOfBreath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Falta de ar" />
+
+    <CheckBox
+        android:id="@+id/checkboxLossOfAppetite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perda de Apetite" />
+
+    <CheckBox
+        android:id="@+id/checkboxDarkUrine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Urina Escura" />
+
+    <CheckBox
+        android:id="@+id/checkboxAbdominalPain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dor abdominal" />
+
+    <CheckBox
+        android:id="@+id/checkboxMemoryLoss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perda de memória" />
+
+    <CheckBox
+        android:id="@+id/checkboxPallor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Palidez" />
+
+    <CheckBox
+        android:id="@+id/checkboxWeightLoss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perda de peso"/>
+
+    <CheckBox
+        android:id="@+id/checkboxCongestionNasal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Congestão Nasal" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCramps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cãimbras" />
+
+    <CheckBox
+        android:id="@+id/checkboxFrequentUrination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Urinação Frequente" />
+
+    <CheckBox
+        android:id="@+id/checkboxDizziness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tonturas" />
+
+    <CheckBox
+        android:id="@+id/checkboxChestTightness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aperto no peito" />
+
+    <CheckBox
+        android:id="@+id/checkboxCoughWithSputum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tosse com expectoração" />
+
+    <CheckBox
+        android:id="@+id/checkboxChestPainWhenBreathing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dor no peito ao respirar" />
+
+    <CheckBox
+        android:id="@+id/checkboxLossOfSmellOrTaste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perda do olfato ou paladar" />
+
+    <CheckBox
+        android:id="@+id/checkboxSoreThroat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dor de garganta" />
+
+    <CheckBox
+        android:id="@+id/checkboxSwollenTonsils"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amígdalas Inchadas" />
+
+    <CheckBox
+        android:id="@+id/checkboxPersistentSadness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tristeza persistente" />
+
+    <CheckBox
+        android:id="@+id/checkboxLossOfInterestInActivities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perda de interesse em atividades" />
+
+    <CheckBox
+        android:id="@+id/checkboxDifficultySleepingOrSleepingTooMuch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dificuldade para dormir ou dormir demais" />
+
+    <CheckBox
+        android:id = "@+id/checkboxAbdominalPainInTheLowerRightSide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dor Abdominal no lado inferior direito" />
+
+    <CheckBox
+        android:id = "@+id/checkboxChangesInAppetite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alterações no apetite" />
+
+    <CheckBox
+        android:id= "@+id/checkboxIrritability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Irritabilidade" />
+
+    <CheckBox
+        android:id= "@+id/checkboxExcessiveWorry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preocupação Excessiva" />
+
+    <CheckBox
+        android:id ="@+id/checkboxMuscleTension"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tensão Muscular" />
+
+    <CheckBox
+        android:id ="@+id/checkboxDifficultyPerformingFamilyTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dificuldade para realizar tarefas familiares" />
+
+    <Button
+        android:id="@+id/buttonDiagnose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diagnosticar"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewDiagnosis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
+</ScrollView>
