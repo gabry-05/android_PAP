@@ -5,20 +5,28 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import android.util.Log
+
 
 class MainActivity : AppCompatActivity() {
 
     private val diseaseSymptomsMap: Map<String, List<String>> = mapOf(
-        "COVID-19" to listOf("Febre", "Fraqueza", "Tosse"),
+        "COVID-19" to listOf("Febre", "Fraqueza", "Tosse", "Perda de olfato ou paladar"),
         "Gripe" to listOf("Febre", "Tosse Seca", "Dores Musculares", "Fadiga", "Congestão Nasal"),
-        "Diabetes Tipo 2" to listOf("Sede Excessiva", "Fadiga", "Visão Turva", "Perda de Peso", "Urinação Frequente"),
+        "Diabetes Tipo 2" to listOf("Sede Excessiva", "Fadiga", "Visão Turva", "Perda de Peso", "Urina Frequente"),
         "Asma" to listOf("Falta de ar", "Aperto no peito", "Tosse Persistente", "Chiado no peito"),
         "Resfriado Comum" to listOf("Tosse"),
-        "Enxaqueca" to listOf("Dor de Cabeça")
+        "Pneumonia" to listOf("Febre", "Tosse com expetoração", "Falta de ar", "Dor no peito ao respirar"),
+        "Amigdalite" to listOf("Dor de garganta", "Amígdalad Inchadas", "Dificuldade para engolir"),
+        "Apendicite" to listOf("Dor abdominal no lado inferior direito", "Vómitos", "Náuseas", "Febre", "Perda de apetite"),
+        "Anemia" to listOf("Fadiga", "Palidez", "Tonturas", "Falta de ar"),
+        "Depressão" to listOf("Tristeza Persistente", "Perda de interesse em atividades", "Perda de apetite", "Dificuldade para dormir ou dormir demais"),
+        "Ansiedade" to listOf("Preocupação excessiva", "Irritabilidade", "Insónias", "Tensão muscular"),
+        "Alzheimer" to listOf("Perda de memória", "Dificuldade para realizar tarefas familiares", "Confusão com tempos ou lugares"),
+        "SIDA" to listOf("Febre", "Dor de cabeça", "Fadiga", "Gânglios inflamados no pescoço e nas virilhas")
     )
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val checkBoxFever = findViewById<CheckBox>(R.id.checkBoxFever)
@@ -60,12 +68,13 @@ class MainActivity : AppCompatActivity() {
         val checkBoxChangesInAppetite = findViewById<CheckBox>(R.id.checkboxChangesInAppetite)
         val checkBoxIrritability = findViewById<CheckBox>(R.id.checkboxIrritability)
         val checkBoxExcessiveWorry = findViewById<CheckBox>(R.id.checkboxExcessiveWorry)
-        val checkboxAbdominalPainInTheLowerRightSide = findViewById<CheckBox>(R.id.checkboxAbdominalPainInTheLowerRightSide)
+        val checkBoxDifficultySwallowing = findViewById<CheckBox>(R.id.checkboxDifficultySwallowing)
         val checkBoxMuscleTension = findViewById<CheckBox>(R.id.checkboxMuscleTension)
         val checkBoxDifficultyPerformingFamilyTasks = findViewById<CheckBox>(R.id.checkboxDifficultyPerformingFamilyTasks)
         val checkBoxConfusionWithTimeAndPlaces = findViewById<CheckBox>(R.id.checkboxConfusionWithTimeAndPlaces)
         val checkBoxPersistentCough = findViewById<CheckBox>(R.id.checkboxPersistentCough)
         val checkBoxWheezingInTheChest = findViewById<CheckBox>(R.id.checkboxWheezingInTheChest)
+        val checkBoxSwollenGlandsInTheNeckAndGroin = findViewById<CheckBox>(R.id.checkboxSwollenGlandsInTheNeckAndGroin)
 
         buttonDiagnose.setOnClickListener {
             val symptoms = mutableListOf<String>()
@@ -99,6 +108,7 @@ class MainActivity : AppCompatActivity() {
             if (checkBoxLossOfSmellOrTaste.isChecked) symptoms.add("Perda do olfato ou paladar")
             if (checkBoxSoreThroat.isChecked) symptoms.add("Dor de garganta")
             if (checkBoxSwollenTonsils.isChecked) symptoms.add("Amígdalas Inchadas")
+            if (checkBoxDifficultySwallowing.isChecked) symptoms.add("Dificuldade para engolir")
             if (checkboxPersistentSadness.isChecked) symptoms.add("Tristeza Persistente")
             if (checkBoxLossOfInterestActivities.isChecked) symptoms.add("Perda de interesse em atividades")
             if (checkBoxDifficultySleepingOrSleepingTooMuch.isChecked) symptoms.add("Dificuldade para dormir ou dormir demais")
@@ -111,6 +121,7 @@ class MainActivity : AppCompatActivity() {
             if (checkBoxConfusionWithTimeAndPlaces.isChecked) symptoms.add("Confusão com tempos ou lugares")
             if (checkBoxPersistentCough.isChecked) symptoms.add("Tosse persistente")
             if (checkBoxWheezingInTheChest.isChecked) symptoms.add("Chiado no peito")
+            if (checkBoxSwollenGlandsInTheNeckAndGroin.isChecked) symptoms.add("Gânglios Inflamados no pescoço e nas virilhas")
 
             val diagnosis = getDiagnosis(symptoms)
             textViewDiagnosis.text = diagnosis
@@ -118,21 +129,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getDiagnosis(symptoms: List<String>): String {
-        // Verifica se há pelo menos 3 sintomas
-        if (symptoms.size < 3) {
+
+        if (symptoms.size < 2) {
             return "Sintomas insuficientes para um diagnóstico"
         }
 
-        // Verifica se os sintomas coincidem com alguma doença no mapa
+
         for ((disease, requiredSymptoms) in diseaseSymptomsMap) {
-            // Conta quantos sintomas necessários estão presentes
-            val matchingSymptomsCount = requiredSymptoms.count { it in symptoms }
-            if (matchingSymptomsCount >= 3) {
+            val matchingSymptomsCount = requiredSymptoms.count {
+                it.lowercase().trim() in symptoms.map { symptom -> symptom.lowercase().trim() }
+            }
+
+
+            Log.d("Diagnosis", "Doença: $disease, Sintomas necessários: $requiredSymptoms, Sintomas fornecidos: $symptoms, Coincidências: $matchingSymptomsCount")
+
+
+            if (matchingSymptomsCount >= 2) {
                 return disease
             }
         }
 
+
         return "Sintomas não suficientes para um pré-diagnóstico"
     }
 }
+
+
 

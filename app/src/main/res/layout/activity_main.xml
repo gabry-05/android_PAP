@@ -35,6 +35,19 @@
             android:text="Dor de Cabeça" />
 
         <CheckBox
+            android:id="@+id/checkboxSoreThroat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dor de garganta" />
+
+        <CheckBox
+            android:id="@+id/checkboxDifficultySwallowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dificuldade para engolir" />
+
+
+        <CheckBox
             android:id="@+id/checkBoxMusclePain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -242,7 +255,6 @@
             android:layout_height="wrap_content"
             android:text="Insónias" />
 
-
         <CheckBox
             android:id="@+id/checkboxLossOfAppetite"
             android:layout_width="wrap_content"
@@ -283,8 +295,7 @@
             android:id="@+id/checkboxFrequentUrination"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Urinação Frequente" />
-
+            android:text="Urina Frequente" />
 
         <CheckBox
             android:id="@+id/checkboxDizziness"
@@ -303,12 +314,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Perda do olfato ou paladar" />
-
-        <CheckBox
-            android:id="@+id/checkboxSoreThroat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dor de garganta" />
 
         <CheckBox
             android:id="@+id/checkboxSwollenTonsils"
@@ -333,6 +338,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Alterações no apetite" />
+
+        <CheckBox
+            android:id="@+id/checkboxSwollenGlandsInTheNeckAndGroin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gânglios inflamados no pescoço e nas virilhas" />
 
 
 

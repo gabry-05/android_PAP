@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_splash.xml">activity_splash.xml</string>
 </resources>
