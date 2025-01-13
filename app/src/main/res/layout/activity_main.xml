@@ -41,6 +41,18 @@
             android:text="Dor de garganta" />
 
         <CheckBox
+            android:id="@+id/checkboxEarPain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dor no ouvido" />
+
+        <CheckBox
+            android:id="@+id/checkboxPressureInTheEar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pressão no ouvido" />
+
+        <CheckBox
             android:id="@+id/checkboxDifficultySwallowing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -244,6 +256,18 @@
             android:text="Visão Turva" />
 
         <CheckBox
+            android:id="@+id/checkBoxSwellingInTheLegsOrAnkles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inchaço nas pernas ou tornozelos" />
+
+        <CheckBox
+            android:id="@+id/checkBoxRapidWeightGainDueToFluidRetention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ganho de peso rápido devido à retenção de líquidos" />
+
+        <CheckBox
             android:id="@+id/checkboxExcessiveThirst"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -289,7 +313,7 @@
             android:id="@+id/checkBoxCramps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cãimbras" />
+            android:text="Cólicas" />
 
         <CheckBox
             android:id="@+id/checkboxFrequentUrination"
@@ -332,6 +356,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Confusão com tempos e lugares" />
+
+        <CheckBox
+            android:id="@+id/checkboxHeartburn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Azia" />
+
+        <CheckBox
+            android:id="@+id/checkboxBloodyStools"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fezes com sangue" />
+
+        <CheckBox
+            android:id="@+id/checkboxDiarrhea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diarreia" />
 
         <CheckBox
             android:id="@+id/checkboxChangesInAppetite"

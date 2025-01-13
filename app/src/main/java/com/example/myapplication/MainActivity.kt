@@ -23,7 +23,12 @@ class MainActivity : AppCompatActivity() {
         "Depressão" to listOf("Tristeza Persistente", "Perda de interesse em atividades", "Perda de apetite", "Dificuldade para dormir ou dormir demais"),
         "Ansiedade" to listOf("Preocupação excessiva", "Irritabilidade", "Insónias", "Tensão muscular"),
         "Alzheimer" to listOf("Perda de memória", "Dificuldade para realizar tarefas familiares", "Confusão com tempos ou lugares"),
-        "SIDA" to listOf("Febre", "Dor de cabeça", "Fadiga", "Gânglios inflamados no pescoço e nas virilhas")
+        "SIDA" to listOf("Febre", "Dor de cabeça", "Fadiga", "Gânglios inflamados no pescoço e nas virilhas"),
+        "Insuficiência Cardíaca" to listOf("Falta de ar", "Inchaço nas pernas ou tornozelos", "Fadiga", "Ganho de peso rápido devido á retenção de líquidos"),
+        "Colite" to listOf("Diarreia", "Febre", "Azia", "Fezes com sangue", "Náuseas"),
+        "Gastroenterite" to listOf("Febre", "Vómitos", "Náuseas", "Cólicas", "Dor abdominal"),
+        "Otite" to listOf("Febre", "Dor no ouvido", "Pressão no ouvido", "Tonturas", "Fadiga", "Vómitos", "Náuseas"),
+
     )
 
     override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState)
@@ -70,10 +75,17 @@ class MainActivity : AppCompatActivity() {
         val checkBoxExcessiveWorry = findViewById<CheckBox>(R.id.checkboxExcessiveWorry)
         val checkBoxDifficultySwallowing = findViewById<CheckBox>(R.id.checkboxDifficultySwallowing)
         val checkBoxMuscleTension = findViewById<CheckBox>(R.id.checkboxMuscleTension)
+        val checkBoxHeartburn = findViewById<CheckBox>(R.id.checkboxHeartburn)
         val checkBoxDifficultyPerformingFamilyTasks = findViewById<CheckBox>(R.id.checkboxDifficultyPerformingFamilyTasks)
+        val checkBoxPressureInTheEar = findViewById<CheckBox>(R.id.checkboxPressureInTheEar)
         val checkBoxConfusionWithTimeAndPlaces = findViewById<CheckBox>(R.id.checkboxConfusionWithTimeAndPlaces)
         val checkBoxPersistentCough = findViewById<CheckBox>(R.id.checkboxPersistentCough)
+        val checkBoxDiarrhea = findViewById<CheckBox>(R.id.checkboxDiarrhea)
+        val checkBoxBloodyStools = findViewById<CheckBox>(R.id.checkboxBloodyStools)
+        val checkBoxEarPain = findViewById<CheckBox>(R.id.checkboxEarPain)
         val checkBoxWheezingInTheChest = findViewById<CheckBox>(R.id.checkboxWheezingInTheChest)
+        val checkBoxSwellingInTheLegsOrAnkles = findViewById<CheckBox>(R.id.checkBoxSwellingInTheLegsOrAnkles)
+        val checkBoxRapidWeightGainDueToFluidRetention = findViewById<CheckBox>(R.id.checkBoxRapidWeightGainDueToFluidRetention)
         val checkBoxSwollenGlandsInTheNeckAndGroin = findViewById<CheckBox>(R.id.checkboxSwollenGlandsInTheNeckAndGroin)
 
         buttonDiagnose.setOnClickListener {
@@ -99,7 +111,7 @@ class MainActivity : AppCompatActivity() {
             if (checkBoxPallor.isChecked) symptoms.add("Palidez")
             if (checkBoxWeightLoss.isChecked) symptoms.add("Perda de peso")
             if (checkBoxCongestionNasal.isChecked) symptoms.add("Congestão Nasal")
-            if (checkBoxCramps.isChecked) symptoms.add("Cãimbras")
+            if (checkBoxCramps.isChecked) symptoms.add("Cólicas")
             if (checkBoxFrequentUrination.isChecked) symptoms.add("Urinação Frequente")
             if (checkBoxDizziness.isChecked) symptoms.add("Tonturas")
             if (checkBoxChestTightness.isChecked) symptoms.add("Aperto no peito")
@@ -119,8 +131,15 @@ class MainActivity : AppCompatActivity() {
             if (checkBoxMuscleTension.isChecked) symptoms.add("Tensão Muscular")
             if (checkBoxDifficultyPerformingFamilyTasks.isChecked) symptoms.add("Dificuldade para realizar tarefas familiares")
             if (checkBoxConfusionWithTimeAndPlaces.isChecked) symptoms.add("Confusão com tempos ou lugares")
+            if (checkBoxBloodyStools.isChecked) symptoms.add("Fezes com sangue")
+            if (checkBoxHeartburn.isChecked) symptoms.add("Azia")
+            if (checkBoxPressureInTheEar.isChecked) symptoms.add("Pressão no ouvido")
+            if (checkBoxEarPain.isChecked) symptoms.add("Dor no ouvido")
             if (checkBoxPersistentCough.isChecked) symptoms.add("Tosse persistente")
+            if (checkBoxDiarrhea.isChecked) symptoms.add("Diarreia")
             if (checkBoxWheezingInTheChest.isChecked) symptoms.add("Chiado no peito")
+            if (checkBoxSwellingInTheLegsOrAnkles.isChecked) symptoms.add("Inchaço nas pernas ou tornozelos")
+            if (checkBoxRapidWeightGainDueToFluidRetention.isChecked) symptoms.add("Ganho de peso rápido devido à retenção de líquidos")
             if (checkBoxSwollenGlandsInTheNeckAndGroin.isChecked) symptoms.add("Gânglios Inflamados no pescoço e nas virilhas")
 
             val diagnosis = getDiagnosis(symptoms)

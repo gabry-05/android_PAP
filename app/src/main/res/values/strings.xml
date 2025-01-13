@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="title_activity_splash">SplashActivity</string>
-    <string name="title_activity_splash.xml">activity_splash.xml</string>
+    <string name="logo_description">Logotipo do Android</string>
+    <string name="splash_text">Bem-vindo ao Diagnify</string>
+
 </resources>
