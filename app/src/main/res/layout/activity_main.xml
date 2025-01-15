@@ -358,6 +358,60 @@
             android:text="Confusão com tempos e lugares" />
 
         <CheckBox
+            android:id="@+id/checkboxItchyNoseEyesAndThroat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comichão no nariz, olhos e garganta" />
+
+        <CheckBox
+            android:id="@+id/checkboxRhinorrhea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rinorreia" />
+
+        <CheckBox
+            android:id="@+id/checkboxIndigestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Indigestão" />
+
+        <CheckBox
+            android:id="@+id/checkboxDifficultyWalking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dificuldade em andar" />
+
+        <CheckBox
+            android:id="@+id/checkboxFainting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desmaios" />
+
+        <CheckBox
+            android:id="@+id/checkboxLackOfBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Falta de equilíbrio" />
+
+        <CheckBox
+            android:id="@+id/checkboxFaceDeviation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desvio da cara" />
+
+        <CheckBox
+            android:id="@+id/checkboxYellowSkinAndEyes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pele e olhos amarelados" />
+
+        <CheckBox
+            android:id="@+id/checkboxSwollenBelly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Barriga inchada" />
+
+        <CheckBox
             android:id="@+id/checkboxHeartburn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

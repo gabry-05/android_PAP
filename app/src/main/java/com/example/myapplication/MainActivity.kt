@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
         "Colite" to listOf("Diarreia", "Febre", "Azia", "Fezes com sangue", "Náuseas"),
         "Gastroenterite" to listOf("Febre", "Vómitos", "Náuseas", "Cólicas", "Dor abdominal"),
         "Otite" to listOf("Febre", "Dor no ouvido", "Pressão no ouvido", "Tonturas", "Fadiga", "Vómitos", "Náuseas"),
+        "Sinusite" to listOf("Rinorreia", "Comichão no nariz, olhos e garganta", "Fraqueza", "Pressão nos ouvidos"),
+        "Hepatite" to listOf("Pele e olhos amarelados", "Barriga inchada", "Urina escura", "Perda de apetite", "Náuseas"),
+        "Gastrite" to listOf("Indigestão", "Náuseas", "Vómitos", "Azia", "Perda de apetite"),
+        "AVC" to listOf("Desvio da cara", "Falta de equilíbrio", "Desmaios", "Dificuldade em andar", "Tonturas")
 
     )
 
@@ -58,6 +62,7 @@ class MainActivity : AppCompatActivity() {
         val checkBoxWeightLoss = findViewById<CheckBox>(R.id.checkboxWeightLoss)
         val checkBoxCongestionNasal = findViewById<CheckBox>(R.id.checkboxCongestionNasal)
         val checkBoxCramps = findViewById<CheckBox>(R.id.checkBoxCramps)
+        val checkBoxFainting = findViewById<CheckBox>(R.id.checkboxFainting)
         val checkBoxFrequentUrination = findViewById<CheckBox>(R.id.checkboxFrequentUrination)
         val checkBoxDizziness = findViewById<CheckBox>(R.id.checkboxDizziness)
         val checkBoxChestTightness = findViewById<CheckBox>(R.id.checkboxChestTightness)
@@ -65,6 +70,7 @@ class MainActivity : AppCompatActivity() {
         val checkBoxChestPainWhenBreathing = findViewById<CheckBox>(R.id.checkboxChestPainWhenBreathing)
         val checkBoxLossOfSmellOrTaste = findViewById<CheckBox>(R.id.checkboxLossOfSmellOrTaste)
         val checkBoxSoreThroat = findViewById<CheckBox>(R.id.checkboxSoreThroat)
+        val checkBoxSwollenBelly = findViewById<CheckBox>(R.id.checkboxSwollenBelly)
         val checkBoxSwollenTonsils = findViewById<CheckBox>(R.id.checkboxSwollenTonsils)
         val checkboxPersistentSadness = findViewById<CheckBox>(R.id.checkboxPersistentSadness)
         val checkBoxLossOfInterestActivities = findViewById<CheckBox>(R.id.checkboxLossOfInterestInActivities)
@@ -73,14 +79,21 @@ class MainActivity : AppCompatActivity() {
         val checkBoxChangesInAppetite = findViewById<CheckBox>(R.id.checkboxChangesInAppetite)
         val checkBoxIrritability = findViewById<CheckBox>(R.id.checkboxIrritability)
         val checkBoxExcessiveWorry = findViewById<CheckBox>(R.id.checkboxExcessiveWorry)
+        val checkBoxDifficultyWalking = findViewById<CheckBox>(R.id.checkboxDifficultyWalking)
+        val checkBoxYellowSkinAndEyes = findViewById<CheckBox>(R.id.checkboxYellowSkinAndEyes)
         val checkBoxDifficultySwallowing = findViewById<CheckBox>(R.id.checkboxDifficultySwallowing)
         val checkBoxMuscleTension = findViewById<CheckBox>(R.id.checkboxMuscleTension)
         val checkBoxHeartburn = findViewById<CheckBox>(R.id.checkboxHeartburn)
+        val checkBoxIndigestion = findViewById<CheckBox>(R.id.checkboxIndigestion)
+        val checkBoxFaceDeviation = findViewById<CheckBox>(R.id.checkboxFaceDeviation)
+        val checkBoxRhinorrhea = findViewById<CheckBox>(R.id.checkboxRhinorrhea)
+        val checkBoxItchyNoseEyesAndThroat = findViewById<CheckBox>(R.id.checkboxItchyNoseEyesAndThroat)
         val checkBoxDifficultyPerformingFamilyTasks = findViewById<CheckBox>(R.id.checkboxDifficultyPerformingFamilyTasks)
         val checkBoxPressureInTheEar = findViewById<CheckBox>(R.id.checkboxPressureInTheEar)
         val checkBoxConfusionWithTimeAndPlaces = findViewById<CheckBox>(R.id.checkboxConfusionWithTimeAndPlaces)
         val checkBoxPersistentCough = findViewById<CheckBox>(R.id.checkboxPersistentCough)
         val checkBoxDiarrhea = findViewById<CheckBox>(R.id.checkboxDiarrhea)
+        val checkBoxLackOfBalance = findViewById<CheckBox>(R.id.checkboxLackOfBalance)
         val checkBoxBloodyStools = findViewById<CheckBox>(R.id.checkboxBloodyStools)
         val checkBoxEarPain = findViewById<CheckBox>(R.id.checkboxEarPain)
         val checkBoxWheezingInTheChest = findViewById<CheckBox>(R.id.checkboxWheezingInTheChest)
@@ -112,27 +125,36 @@ class MainActivity : AppCompatActivity() {
             if (checkBoxWeightLoss.isChecked) symptoms.add("Perda de peso")
             if (checkBoxCongestionNasal.isChecked) symptoms.add("Congestão Nasal")
             if (checkBoxCramps.isChecked) symptoms.add("Cólicas")
+            if (checkBoxIndigestion.isChecked) symptoms.add("Indigestão")
+            if (checkBoxSwollenBelly.isChecked) symptoms.add("Barriga inchada")
             if (checkBoxFrequentUrination.isChecked) symptoms.add("Urinação Frequente")
             if (checkBoxDizziness.isChecked) symptoms.add("Tonturas")
             if (checkBoxChestTightness.isChecked) symptoms.add("Aperto no peito")
             if (checkBoxCoughWithSputum.isChecked) symptoms.add("Tosse com Expectoração")
+            if (checkBoxFainting.isChecked) symptoms.add("Desmaios")
             if (checkBoxChestPainWhenBreathing.isChecked) symptoms.add("Dor no peito ao respirar")
             if (checkBoxLossOfSmellOrTaste.isChecked) symptoms.add("Perda do olfato ou paladar")
             if (checkBoxSoreThroat.isChecked) symptoms.add("Dor de garganta")
             if (checkBoxSwollenTonsils.isChecked) symptoms.add("Amígdalas Inchadas")
             if (checkBoxDifficultySwallowing.isChecked) symptoms.add("Dificuldade para engolir")
+            if (checkBoxLackOfBalance.isChecked) symptoms.add("Falta de equilíbrio")
             if (checkboxPersistentSadness.isChecked) symptoms.add("Tristeza Persistente")
+            if (checkBoxFaceDeviation.isChecked) symptoms.add("Desvio da cara")
             if (checkBoxLossOfInterestActivities.isChecked) symptoms.add("Perda de interesse em atividades")
             if (checkBoxDifficultySleepingOrSleepingTooMuch.isChecked) symptoms.add("Dificuldade para dormir ou dormir demais")
             if (checkBoxAbdominalPainInTheLowerRightSide.isChecked) symptoms.add("Dor Abdominal no lado inferior direito")
             if (checkBoxChangesInAppetite.isChecked) symptoms.add("Alterações no apetite")
+            if (checkBoxDifficultyWalking.isChecked) symptoms.add("Dificuldade em andar")
             if (checkBoxIrritability.isChecked) symptoms.add("Irritabilidade")
+            if (checkBoxYellowSkinAndEyes.isChecked) symptoms.add("Pele e olhos amarelados")
             if (checkBoxExcessiveWorry.isChecked) symptoms.add("Preocupação Excessiva")
+            if (checkBoxItchyNoseEyesAndThroat.isChecked) symptoms.add("Comichão na garganta, olhos e garganta")
             if (checkBoxMuscleTension.isChecked) symptoms.add("Tensão Muscular")
             if (checkBoxDifficultyPerformingFamilyTasks.isChecked) symptoms.add("Dificuldade para realizar tarefas familiares")
             if (checkBoxConfusionWithTimeAndPlaces.isChecked) symptoms.add("Confusão com tempos ou lugares")
             if (checkBoxBloodyStools.isChecked) symptoms.add("Fezes com sangue")
             if (checkBoxHeartburn.isChecked) symptoms.add("Azia")
+            if (checkBoxRhinorrhea.isChecked) symptoms.add("Rinorreia")
             if (checkBoxPressureInTheEar.isChecked) symptoms.add("Pressão no ouvido")
             if (checkBoxEarPain.isChecked) symptoms.add("Dor no ouvido")
             if (checkBoxPersistentCough.isChecked) symptoms.add("Tosse persistente")
@@ -172,6 +194,4 @@ class MainActivity : AppCompatActivity() {
         return "Sintomas não suficientes para um pré-diagnóstico"
     }
 }
-
-
 
